@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Entry Management System</title>
+
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <style media="screen">
+      body{
+        text-align: center;
+        background-color: white;
+      }
+      .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+      .close:hover,.close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+      }
+      .heading{
+          padding-top: 10%;
+          padding-bottom: 10%;
+          background-color: Green;
+      }
+      .options{
+        padding-top: 5%;
+      }
+      .modal{
+        position: fixed;
+        /*z-index: 8888; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+        display: none;
+      }
+      .block {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        display: inline-flex;
+        background-color: white;
+        color: black;
+        border: 2px solid #4CAF50;
+      }
+
+      .block:hover {
+        background-color: #4CAF50;
+        color: white;
+      }
+      .Entry{
+          margin-right: 100px;
+      }
+
+
+      @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+      .login-page {
+        padding-top: 10%;
+        width: 360px;
+        padding: 8% 0 0;
+        margin: auto;
+      }
+      .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+      .form input {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="heading">
+      <h1>Entry Management System</h1>
+    </div>
+    <div class="options">
+      <button class="block Entry" data-modal="modalOne">Entry</button>
+      <button class="block Exit" data-modal="modalTwo">Exit</button>
+
+      <div id="modalOne" class="modal">
+        <div class="modal-content">
+            <div class="form">
+              <a class="close">&times;</a>
+              <form method="post" action="/entry" class="login-form">
+                <h1> Visiter's Details</h1>
+                <input type="text" name="vname" required placeholder="Visiter's Full Name"/>
+                <input type="email" name="vemail" required placeholder="abc@xyz.com"/>
+                <input type="text" name="vphone" required placeholder="1234567890"/>
+
+                <h1> host's Details</h1>
+                <input type="text" name="hname" required placeholder="Host's Full Name"/>
+                <input type="email" name="hemail" required placeholder="abc@xyz.com"/>
+                <input type="text" name="hphone" required placeholder="1234567890"/>
+
+                <input type="text" name="address" required placeholder="12 Vidhyanager hubli"/>
+                <button type="submit" value="submit">Submit</button>
+              </form>
+            </div>
+        </div>
+      </div>
+
+
+      <div id="modalTwo" class="modal">
+        <div class="modal-content">
+            <div class="form">
+              <a class="close">&times;</a>
+              <form class="login-form" method="post" action="/exit">
+
+                <h1> Visiter's Details</h1>
+                <input name="vemail" type="email" required placeholder="abc@xyz.com"/>
+                <input name="vphone" type="text" required placeholder="1234567890"/>
+
+                <button type="submit" required value="submit">Submit</button>
+              </form>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+    <script type="text/javascript">
+      var modalBtns = document.querySelectorAll(".block");
+      modalBtns.forEach(function(btn){
+        btn.onclick = function() {
+          var modal = btn.getAttribute('data-modal');
+          document.getElementById(modal).style.display = "block";
+        }
+      });
+      var closeBtns = document.querySelectorAll(".close");
+      closeBtns.forEach(function(btn){
+        btn.onclick = function() {
+          var modal = btn.closest('.modal');
+          modal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
