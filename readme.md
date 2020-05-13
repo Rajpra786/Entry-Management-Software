@@ -26,8 +26,8 @@
 * Use git clone to download the template from github
 
 ```sh
-$ git clone https://github.com/Rajpra786/ResearchPapers-Template.git
-$ cd ResearchPapers-Template
+$ git clone https://github.com/Rajpra786/Entry-Management-Software.git
+$ cd Entry-Management-Software
 ```
 * or Download the zip file from github
 * After downloading the repo, install requirements with npm
