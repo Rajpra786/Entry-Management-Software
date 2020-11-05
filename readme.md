@@ -14,10 +14,10 @@
 
 ### Screenshots
 <h3>1. On Entry <h3>
-<img src="screenshots/out1" alt="on Entry">
+<img src="screenshots/out1.png" alt="on Entry">
 
 <h3>2. On Exit <h3>
-<img src="screenshots/out2" alt="on Exit">
+<img src="screenshots/out2.png" alt="on Exit">
 
 ### Tech Stack
 ##### Front-End
