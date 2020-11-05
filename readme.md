@@ -12,6 +12,13 @@
     5. Host name
     6. Address visited.
 
+### Screenshots
+<h3>1. On Entry <h3>
+<img src="screenshots/out1" alt="on Entry">
+
+<h3>2. On Exit <h3>
+<img src="screenshots/out2" alt="on Exit">
+
 ### Tech Stack
 ##### Front-End
 * HTML
